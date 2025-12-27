@@ -21,6 +21,7 @@ theme = "PaperMod"
 # Sửa lỗi "Failed to find a valid digest" (CSS Integrity)
 [params.assets]
   disableFingerprinting = true
+  fingerprint = ""
 
 [params.profileMode]
   enabled = true
