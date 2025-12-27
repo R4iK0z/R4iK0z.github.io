@@ -3,10 +3,6 @@ languageCode = "vi"
 title = "Phú | Blog Lập Trình"
 theme = "PaperMod"
 
-# QUAN TRỌNG – KHÔNG ĐƯỢC BẬT relativeURLs
-relativeURLs = false
-canonifyURLs = true
-
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
@@ -21,6 +17,10 @@ canonifyURLs = true
   defaultTheme = "light"
   enableSearch = true
   disableLiveReload = true
+
+# Sửa lỗi "Failed to find a valid digest" (CSS Integrity)
+[params.assets]
+  disableFingerprinting = true
 
 [params.profileMode]
   enabled = true

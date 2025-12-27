@@ -3,9 +3,10 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main  # 1. Đổi từ master thành main (vì repo của bạn đang dùng nhánh main)
+
 permissions:
-  contents: read
+  contents: write  # Đổi thành write để có quyền đẩy code vào nhánh gh-pages
   pages: write
   id-token: write
 
@@ -17,13 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: false  # 2. Đổi thành false vì bạn đã biến theme thành folder thường
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3 # Cập nhật lên v3 cho ổn định
         with:
-          hugo-version: '0.124.1'
+          hugo-version: 'latest'
           extended: true
+
       - name: Build
         run: hugo --minify
 
@@ -32,3 +34,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages # Tách riêng file build ra nhánh này cho sạch
