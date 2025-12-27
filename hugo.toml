@@ -1,0 +1,61 @@
+baseURL = "https://r4ik0z.github.io/"
+languageCode = "vi"
+title = "Phú | Blog Lập Trình"
+theme = "PaperMod"
+
+# QUAN TRỌNG – KHÔNG ĐƯỢC BẬT relativeURLs
+relativeURLs = false
+canonifyURLs = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = "production"
+  author = "Phú"
+  description = "Blog cá nhân chia sẻ kiến thức lập trình Java, JavaScript và Công nghệ"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  defaultTheme = "light"
+  enableSearch = true
+  disableLiveReload = true
+
+[params.profileMode]
+  enabled = true
+  title = "Phú"
+  subtitle = "Sinh viên CNTT | Lập trình Java & Web"
+  imageUrl = "/images/avatar.jpg"
+  imageTitle = "Avatar"
+  imageWidth = 160
+  imageHeight = 160
+
+[[params.profileMode.buttons]]
+  name = "Blog"
+  url = "/posts/"
+
+[[params.profileMode.buttons]]
+  name = "GitHub"
+  url = "https://github.com/R4iK0z"
+
+[menu]
+  [[menu.main]]
+    name = "Trang chủ"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Giới thiệu"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Tìm kiếm"
+    url = "/search/"
+    weight = 5
